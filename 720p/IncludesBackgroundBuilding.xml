@@ -10,15 +10,22 @@
 			<visible>![Skin.HasSetting(UseCustomBackground) + !String.IsEmpty(Skin.String(CustomBackgroundPath))]</visible>
 			<include>VisibleFadeEffect</include>
 		</control>
-		<control type="image">
-			<depth>DepthBackground</depth>
-			<description>User Set Background Image</description>
-			<include>BackgroundDimensions</include>
-			<aspectratio>scale</aspectratio>
-			<texture>$INFO[Skin.String(CustomBackgroundPath)]</texture>
-			<visible>Skin.HasSetting(UseCustomBackground) + !String.IsEmpty(Skin.String(CustomBackgroundPath))</visible>
-			<include>VisibleFadeEffect</include>
-		</control>
+		<control type="multiimage" id="1">
+      <description>User Set Background slideshow</description>
+      <left>0</left>
+      <top>0</top>
+      <width>1280</width>
+      <height>1050</height>
+      <visible>Skin.HasSetting(UseCustomBackground) + !IsEmpty(Skin.String(CustomBackgroundPath))</visible>
+      <info></info>
+      <imagepath>$INFO[Skin.String(CustomBackgroundPath)]</imagepath>
+      <timeperimage>5000</timeperimage>
+      <fadetime>2000</fadetime>
+      <pauseatend>10000</pauseatend>
+      <randomize>true</randomize>
+      <loop>no</loop>
+      <aspectratio>stretch</aspectratio>
+</control>
 		<control type="image">
 			<depth>DepthBackground</depth>
 			<include>BackgroundDimensions</include>
